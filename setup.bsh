@@ -1,0 +1,15 @@
+#!/usr/bin/bash
+
+rm $HOME/.vimrc
+ln -s .vimrc $HOME/.vimrc
+
+# .gitconfig
+if [ `grep "[include]" $HOME/.gitconfig -c` -eq 0 ]
+then
+  echo -e "[include]\n\tpath=`pwd`/.gitconfig" >> $HOME/.gitconfig
+fi
+
+
+
+
+
