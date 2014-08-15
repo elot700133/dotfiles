@@ -21,8 +21,7 @@ syntax enable
 " Interface
 """"""""""""""""""""""""""""""""""""""""""
 "set wildmenu
-
-set wildignore=*.o,*~
+"set wildignore=*.o,*~
 
 set ruler
 
@@ -54,3 +53,9 @@ map <C-l> <C-W>l
 " General
 """"""""""""""""""""""""""""""""""""""""""
 set tags=./tags;~
+set expandtab
+set smarttab
+set shiftwidth=2 " tab = 2 spaces
+set ai "Auto indent
+set si "Smart indent
+"set wrap "Wrap lines
