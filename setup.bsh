@@ -1,7 +1,7 @@
 #!/usr/bin/bash
 
 rm $HOME/.vimrc
-ln -s .vimrc $HOME/.vimrc
+ln -s `pwd`/.vimrc $HOME/.vimrc
 
 # .gitconfig
 if [ `grep "[include]" $HOME/.gitconfig -c` -eq 0 ]
