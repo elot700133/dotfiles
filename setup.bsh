@@ -1,16 +1,29 @@
 #!/usr/bin/bash
 
-rm $HOME/.vimrc
-ln -s `pwd`/.vimrc $HOME/.vimrc
+dir=`pwd`
+files=".vimrc .bash_alias .git-prompt.sh .git-completion.bsh"
+backup_dir=~/.dotfiles_backup
 
-rm $HOME/.bash_alias
-ln -s `pwd`/.bash_alias $HOME/.bash_alias
+# make backup
+echo "Creating $backup_dir for backup of any existing dotfiles"
+mkdir -p $backup_dir
+for file in $files; do
+  mv -v ~/$file $backup_dir
+done
+echo "...done"
+
+# create symlinks
+echo "Create symlinks"
+for file in $files; do
+    ln -sv $dir/$file ~/$file
+done
+echo "...done"
 
 
 # .gitconfig
-if [ `grep "\[include\]" $HOME/.gitconfig -c` -eq 0 ]
+if [ `grep "\[include\]" ~/.gitconfig -c` -eq 0 ]
 then
-  echo -e "[include]\n\tpath=`pwd`/.gitconfig" >> $HOME/.gitconfig
+  echo -e "[include]\n\tpath=`pwd`/.gitconfig" >> ~/.gitconfig
 fi
 
 
