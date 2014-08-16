@@ -2,18 +2,35 @@
   st = status -s
   ci = commit
   co = checkout
-  fo = fetch origin
+  fo = fetch origin --progress --prune
+  df = diff
+  ck = cherry-pick
+  undo = reset --hard # go back to a certian commit
   ci = commit
   br = branch
   unstage = reset HEAD --
   last = log -1 HEAD
   l = log --pretty=oneline -n 20 --graph --abbrev-commit
-  lol = log --graph --abbrev-commit --decorate --date=relative --format=format:\"%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim red)- %an%C(reset)%C(bold yellow)%d%C(reset)\" --all
-  loa = log --graph --abbrev-commit --decorate --format=format:\"%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n\"\" %C(white)%s%C(reset) %C(dim white)- %an%C(reset)\" --all
+  lol = log --graph --date-order -C -M --pretty=format:\"%C(auto)<%h> %Creset%C(auto)%ar %Creset%C(auto)[%an] %C(auto)%d%Creset %s\" --date=relative --color
+  #log all
+  loa = log --graph --date-order -C -M --pretty=format:\"%C(auto)<%h> %Creset%C(auto)%ar %Creset%C(auto)[%an] %C(auto)%d%Creset %s\" --all --date=relative --color
   lg = !"git lg1"
   logall = log --pretty=format:\"%an %ae %ad %ar %cn %ce %cd %cr %s\"
-[color]
-  ui = true
-
+  rf = checkout --  # revert a file
+  alias = !git config --list | grep 'alias\\.' | sed 's/alias\\.\\([^=]*\\)=\\(.*\\)/\\1\\t=> \\2/' | sort
+  # shows commit counts
+  pulse = shortlog -s --
+  list-changed-files = diff-tree --no-commit-id --name-only -r #<sha id>
 [push]
   default = matching
+[color]
+  diff = auto
+  status = auto
+  branch = auto
+  ui = auto
+[mergetool]
+  keepBackup = false
+[difftool]
+  prompt = false
+[diff]
+  tool = meld
