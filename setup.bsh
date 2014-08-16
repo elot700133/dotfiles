@@ -8,7 +8,7 @@ ln -s `pwd`/.bash_alias $HOME/.bash_alias
 
 
 # .gitconfig
-if [ `grep "[include]" $HOME/.gitconfig -c` -eq 0 ]
+if [ `grep "\[include\]" $HOME/.gitconfig -c` -eq 0 ]
 then
   echo -e "[include]\n\tpath=`pwd`/.gitconfig" >> $HOME/.gitconfig
 fi
