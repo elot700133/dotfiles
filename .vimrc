@@ -72,4 +72,5 @@ set shiftwidth=2 " tab = 2 spaces
 set autoindent "Auto indent
 set smartindent "Smart indent
 "set wrap "Wrap lines
+set nowrap "no wrapping text
 
