@@ -14,3 +14,6 @@
   logall = log --pretty=format:\"%an %ae %ad %ar %cn %ce %cd %cr %s\"
 [color]
   ui = true
+
+[push]
+  default = matching
