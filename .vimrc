@@ -51,6 +51,7 @@ set novisualbell
 
 map <F2> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR><CR>
 map <F3> :!git branch -vv
+set pastetoggle=<F4>  "paste mode
 
 " moving between windows
 map <C-j> <C-W>j
