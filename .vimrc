@@ -7,15 +7,23 @@ set nocp
 filetype plugin on
 filetype indent on
 
+" auto reload
 set autoread
 
 syntax enable
+
+" show line number
+set number
+
+
+set textwidth=79
 
 """"""""""""""""""""""""""""""""""""""""""
 " Color
 """"""""""""""""""""""""""""""""""""""""""
 "colorscheme desert
 "set background=dark
+"set background=light
 
 """"""""""""""""""""""""""""""""""""""""""
 " Interface
@@ -23,6 +31,7 @@ syntax enable
 "set wildmenu
 "set wildignore=*.o,*~
 
+" always show cursor position
 set ruler
 
 set cmdheight=2
@@ -52,10 +61,14 @@ map <C-l> <C-W>l
 """"""""""""""""""""""""""""""""""""""""""
 " General
 """"""""""""""""""""""""""""""""""""""""""
+" recusively look for tags until reaching home dir
 set tags=./tags;~
+
+" use spaces instead tab
 set expandtab
 set smarttab
 set shiftwidth=2 " tab = 2 spaces
-set ai "Auto indent
-set si "Smart indent
+set autoindent "Auto indent
+set smartindent "Smart indent
 "set wrap "Wrap lines
+

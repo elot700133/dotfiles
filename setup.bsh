@@ -3,6 +3,10 @@
 rm $HOME/.vimrc
 ln -s `pwd`/.vimrc $HOME/.vimrc
 
+rm $HOME/.bash_alias
+ln -s `pwd`/.bash_alias $HOME/.bash_alias
+
+
 # .gitconfig
 if [ `grep "[include]" $HOME/.gitconfig -c` -eq 0 ]
 then
