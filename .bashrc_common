@@ -6,14 +6,11 @@
 [[ $- != *i* ]] && return
 set bell-style none
 
-# path
+# common path
 export PATH=$PATH:~/bin:/opt
 
 # 
 export EDITOR="vim"
-
-#
-export HISTSIZE=50000
 
 #
 #export DISPLAY=localhost:0
@@ -25,11 +22,17 @@ source ~/.git-completion.bsh
 GIT_PROMPT_ONLY_IN_REPO=1
 source ~/applications/bash-git-prompt/gitprompt.sh
 
+# prompt
 PS1='[\u@\h \W$(__git_ps1 " (%s)")]\$ '
 #PS1='[\u@\h \W]\$ '
 
 # alias common for all distros
 source ~/.bash_alias 
 
+# History
+export HISTIGNORE="ls:ll:cd"
+export HISTSIZE=100000
+export HISTCONTROL=ignoredups # ignorespace
+export HISTTIMEFORMAT="[$(tput setaf 6)%F %T$(tput sgr0)]: " # colorful date
 
 
