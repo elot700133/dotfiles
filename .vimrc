@@ -7,6 +7,10 @@ set nocp
 filetype plugin on
 filetype indent on
 
+" encoding
+set encoding=utf-8
+set fileencodings=utf-8
+
 " auto reload
 set autoread
 
@@ -14,7 +18,6 @@ syntax enable
 
 " show line number
 set number
-
 
 set textwidth=79
 
