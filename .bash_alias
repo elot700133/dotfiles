@@ -1,42 +1,54 @@
 
-alias suspend='sudo systemctl suspend'
 #alias eboot='sudo reboot'
-alias turnoff='sudo shutdown -h +0'
-alias vi='vim'
-alias pdfr='apvlv'
-alias ls='ls -h --color=auto'
-alias ll='ls -l'
-alias la='ls -al'
-alias l.='ls -dl .*'
-alias cd..='cd ..'
+# check for failure
+# systemctl --failed
+
 alias ..='cd ..'
 alias ..2='cd ../..'
 alias ..3='cd ../../..'
 alias ..4='cd ../../../..'
 alias ..5='cd ../../../../..'
-alias h="history"
-alias hg="history | grep"
-alias p="ps -ef | grep"
-alias f="find . |grep" #
-alias cal="cal `date +%Y`"
-alias exm="cd ~/.xmonad; vi xmonad.hs"
-alias c="clear"
-alias giteye='GitEye'
-alias tarz='tar -zxvf'
-alias urxvt='urxvt -bg Black -fg White'
-alias term='urxvt'
+alias bc='bc -l'
+alias c='clear'
+alias cal='cal 2014'
+alias cd..='cd ..'
+alias diff='colordiff'
 alias dir-usage='du --summarize --human-readable'
 alias disk-usage='df --human-readable'
-alias grep='grep --color=auto'
 alias egrep='egrep --color=auto'
+alias exm='cd ~/.xmonad; vi xmonad.hs'
+alias f='find . |grep'
 alias fgrep='fgrep --color=auto'
-alias bc='bc -l'
-alias diff='colordiff'
-alias mount='mount | column -t'
+alias giteye='GitEye'
+alias grep='grep --color=auto'
+alias h='history'
+alias hg='history | grep'
+alias l.='ls -dl .*'
+alias la='ls -al'
+alias ll='ls -l'
+alias ls='ls -h --color=auto'
 alias meminfo='free -mlt'
-alias psmem='ps auxf | sort -nr -k 4 | head -10' # top 10 mem intensive process
-alias pscpu='ps auxf | sort -nr -k 3 | head -10' # top 10 cpu intensive process
-alias distro='lsb_release -i'
-# check for failure
-# systemctl --failed
-
+alias mount='mount | column -t'
+alias p='ps -ef | grep'
+alias pacin='sudo pacman -S'
+alias pacins='sudo pacman -U'
+alias pacinsd='sudo pacman -S --asdeps'
+alias pacloc='pacman -Qi'
+alias paclocs='pacman -Qs'
+alias pacmir='sudo pacman -Syy'
+alias pacre='sudo pacman -R'
+alias pacrem='sudo pacman -Rns'
+alias pacrep='pacman -Si'
+alias pacsrh='pacman -Ss'
+alias pacupd='sudo pacman -Sy && sudo abs'
+alias pacupg='sudo pacman -Syu'
+alias pdfr='apvlv'
+alias pscpu='ps auxf | sort -nr -k 3 | head -10'
+alias psmem='ps auxf | sort -nr -k 4 | head -10'
+alias suspend='sudo systemctl suspend'
+alias tarz='tar -zxvf'
+alias term='urxvt'
+alias turnoff='sudo shutdown -h +0'
+alias urxvt='urxvt -bg Black -fg White'
+alias vi='vim'
+alias yaoupd='yaourt -Syua --noconfirm'
