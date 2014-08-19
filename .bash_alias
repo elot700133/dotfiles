@@ -36,6 +36,7 @@ alias mount='mount | column -t'
 alias meminfo='free -mlt'
 alias psmem='ps auxf | sort -nr -k 4 | head -10' # top 10 mem intensive process
 alias pscpu='ps auxf | sort -nr -k 3 | head -10' # top 10 cpu intensive process
+alias distro='lsb_release -i'
 # check for failure
 # systemctl --failed
 
