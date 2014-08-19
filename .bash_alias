@@ -1,5 +1,4 @@
 
-alias ls='ls --color=auto'
 alias suspend='sudo systemctl suspend'
 #alias eboot='sudo reboot'
 alias turnoff='sudo shutdown -h +0'
@@ -8,10 +7,13 @@ alias pdfr='apvlv'
 alias ls='ls -h --color=auto'
 alias ll='ls -l'
 alias la='ls -al'
+alias l.='ls -dl .*'
 alias cd..='cd ..'
 alias ..='cd ..'
-alias ...='cd ../..'
-alias ....='cd ../../..'
+alias ..2='cd ../..'
+alias ..3='cd ../../..'
+alias ..4='cd ../../../..'
+alias ..5='cd ../../../../..'
 alias h="history"
 alias hg="history | grep"
 alias p="ps -ef | grep"
@@ -25,6 +27,15 @@ alias urxvt='urxvt -bg Black -fg White'
 alias term='urxvt'
 alias dir-usage='du --summarize --human-readable'
 alias disk-usage='df --human-readable'
+alias grep='grep --color=auto'
+alias egrep='egrep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias bc='bc -l'
+alias diff='colordiff'
+alias mount='mount | column -t'
+alias meminfo='free -mlt'
+alias psmem='ps auxf | sort -nr -k 4 | head -10' # top 10 mem intensive process
+alias pscpu='ps auxf | sort -nr -k 3 | head -10' # top 10 cpu intensive process
 # check for failure
 # systemctl --failed
 
