@@ -1,4 +1,3 @@
-
 """"""""""""""""""""""""""""""""""""""""""
 " General
 """"""""""""""""""""""""""""""""""""""""""
@@ -77,3 +76,11 @@ set smartindent "Smart indent
 "set wrap "Wrap lines
 set nowrap "no wrapping text
 
+""""""""""""""""""""""""""""""""""""""""""""""""""
+" how to
+""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" build within vim 
+" :make
+" Jump to the error
+" :copen   
