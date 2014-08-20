@@ -69,6 +69,13 @@ map <DOWN> :resize -3<CR>
 map <RIGHT> :vertical resize +3<CR>
 map <LEFT> :vertical resize -3<CR>
 
+" ctags
+" ctrl + \ to tab window definition
+map <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR> 
+" alt + \ to vertical split definition
+map <A-]> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
+
+
 """"""""""""""""""""""""""""""""""""""""""
 " General
 """"""""""""""""""""""""""""""""""""""""""
