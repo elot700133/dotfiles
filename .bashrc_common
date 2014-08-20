@@ -19,14 +19,14 @@ export EDITOR="vim"
 #source /usr/share/git/completion/git-prompt.sh
 
 #
-#source ~/.git-prompt.sh
+source ~/.git-prompt.sh
 
 # 
 source ~/.git-completion.bsh
 
 # bach-git-prompt
-GIT_PROMPT_ONLY_IN_REPO=0
-source ~/applications/bash-git-prompt/gitprompt.sh
+#GIT_PROMPT_ONLY_IN_REPO=1
+#source ~/applications/bash-git-prompt/gitprompt.sh
 
 # prompt
 PS1='[\u@\h \W$(__git_ps1 " (%s)")]\$ '

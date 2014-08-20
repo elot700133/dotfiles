@@ -61,6 +61,14 @@ map <C-k> <C-W>k
 map <C-h> <C-W>h
 map <C-l> <C-W>l
 
+" resize windows
+"map + <C-W>+
+"map - <C-W>-
+map <UP> :resize +3<CR>
+map <DOWN> :resize -3<CR>
+map <RIGHT> :vertical resize +3<CR>
+map <LEFT> :vertical resize -3<CR>
+
 """"""""""""""""""""""""""""""""""""""""""
 " General
 """"""""""""""""""""""""""""""""""""""""""
