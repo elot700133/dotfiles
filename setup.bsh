@@ -1,21 +1,21 @@
 #!/usr/bin/bash
 
 dir=`pwd`
-files=".bashrc_common .bash_alias .git-prompt.sh .git-completion.bsh"
+files="bashrc_common bash_alias git-prompt.sh git-completion.bsh"
 backup_dir=~/.dotfiles_backup
 
 # make backup
 echo "Creating $backup_dir for backup of any existing dotfiles"
 mkdir -p $backup_dir
 for file in $files; do
-  mv -v ~/$file $backup_dir
+  mv -v ~/.$file $backup_dir
 done
 echo "...done"
 
 # create symlinks
 echo "Create symlinks"
 for file in $files; do
-    ln -sv $dir/$file ~/$file
+    ln -sv $dir/$file ~/.$file
 done
 echo "...done"
 
