@@ -52,3 +52,12 @@ up () {
         cd $UP
         UP=''
 }
+
+# recursive find and replace
+# $1~ starting path 
+# $2~ file name '*.cpp'
+# $3~ patterh "s@old@new@g"
+# find-replace ~/foo '*.cpp' "s@bar@char@g"
+find-replace () {
+  find $1 -type f -iname $2 -exec sed -i.bk $3 "{}" +;
+}
