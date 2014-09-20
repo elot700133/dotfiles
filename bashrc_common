@@ -11,6 +11,8 @@ export PATH=$PATH:~/bin:/opt
 
 # 
 export EDITOR="vim"
+# vim in bash shell
+set -o vi
 
 #
 #export DISPLAY=localhost:0
