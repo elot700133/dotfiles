@@ -21,6 +21,8 @@
   # shows commit counts
   pulse = shortlog -s --
   list-changed-files = diff-tree --no-commit-id --name-only -r #<sha id>
+  # submodule
+  sm = submodule
 [push]
   default = matching
 [color]
