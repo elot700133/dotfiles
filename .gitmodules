@@ -31,3 +31,6 @@
 [submodule "vim/bundle/snippets"]
 	path = vim/bundle/snippets
 	url = https://github.com/honza/vim-snippets.git
+[submodule "vim/bundle/tabline"]
+	path = vim/bundle/tabline
+	url = https://github.com/elot700133/tabline.vim
