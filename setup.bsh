@@ -1,7 +1,7 @@
 #!/usr/bin/bash
 
 dir=`pwd`
-files="bashrc_common bash_alias git-prompt.sh git-completion.bsh tmux.conf"
+files="bashrc_common bash_alias git-prompt.sh git-completion.bsh tmux.conf vim"
 backup_dir=~/.dotfiles_backup
 
 # make backup

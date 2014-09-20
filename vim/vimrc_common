@@ -35,6 +35,7 @@ set textwidth=79
 "------------------------------------------------------------------------------
 " Interface
 "------------------------------------------------------------------------------
+set wildmenu
 set wildmode=list:longest,full
 set wildignore+=*.o,*~,*.so,*.swp,*.zip,.git,*/doxygen/*
 
@@ -62,7 +63,8 @@ map <F1> :help
 " ctrl + \ to tab window definition
 "map <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR> 
 " alt + \ to vertical split definition
-map <F3> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
+" map <F3> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
+map <F3> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
 
 set pastetoggle=<F4>  "paste mode
 
@@ -83,6 +85,8 @@ map <silent> <RIGHT> :vertical resize +3<CR>
 map <silent> <LEFT> :vertical resize -3<CR>
 
 " tab
+" gvim - display tab as [Num]Filename+Modified status 
+set guitablabel=\[%N\]\ %t\ %M 
 " ctrl+shift+H or L
 map ` gt<CR>
 map 1 1gt<CR>
@@ -111,7 +115,7 @@ set nowrap "no wrapping text
 " CtrlP
 "------------------------------------------------------------------------------
 let g:ctrlp_map = '<c-p>' 
-let g:ctrlp_cmd = 'ctrlp' 
+let g:ctrlp_cmd = 'CtrlP' 
 
 "------------------------------------------------------------------------------
 " NERDTree 
