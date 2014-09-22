@@ -1,1 +1,6 @@
 set editing-mode vi
+
+
+"\C-l": clear-screen
+"\C-p": previous-history
+"\C-n": next-history
