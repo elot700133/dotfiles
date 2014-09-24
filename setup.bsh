@@ -2,7 +2,7 @@
 
 dir=`pwd`
 files="bashrc_common bash_alias git-prompt.sh git-completion.bsh tmux.conf vim
-inputrc"
+inputrc Xresources"
 backup_dir=~/.dotfiles_backup
 
 # make backup

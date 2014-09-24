@@ -1,0 +1,18 @@
+URxvt.depth: 32
+URxvt.background: rgba:1111/1111/1111/dddd
+
+! scroll back secondary screen
+URxvt.secondaryScreen: 1
+URxvt.secondaryScroll: 0
+! scroll back secondary screen with mouse wheel
+URxvt.secondaryWheel: 1
+
+! tabs
+! Key   Description
+!Shift+Down      New tab
+!Shift+Left      Go to left tab
+!Shift+Right     Go to right tab
+!Ctrl+Left       Move tab to the left
+!Ctrl+Right      Move tab to the right
+!Ctrl+d  Close tab 
+URxvt.perl-ext-common: ...,tabbed,...

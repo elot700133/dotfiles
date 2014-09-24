@@ -38,6 +38,7 @@ alias tarz='tar -zxvf'
 alias term='urxvt'
 alias turnoff='sudo shutdown -h +0'
 alias urxvt='urxvt -bg Black -fg White'
+alias urxvt-transparent='urxvt -depth 32 -bg rgba:3f00/3f00/3f00/dddd'
 alias vi='vim'
 
 # Functions
@@ -60,4 +61,8 @@ up () {
 # find-replace ~/foo '*.cpp' "s@bar@char@g"
 find-replace () {
   find $1 -type f -iname $2 -exec sed -i.bk $3 "{}" +;
+}
+
+display-colors() {
+  (x=`tput op` y=`printf %76s`;for i in {0..256};do o=00$i;echo -e ${o:${#o}-3:3} `tput setaf $i;tput setab $i`${y// /=}$x;done)
 }
