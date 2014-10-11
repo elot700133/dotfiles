@@ -1,7 +1,7 @@
 
 !prettiness
 URxvt.transparent: True
-URxvt.shading: 20
+URxvt.shading: 40
 !URxvt.internalBorder: 0
 !URxvt.externalBorder: 0
 !URxvt.backgroundPixmap: /usr/share/backgrounds/images/default.png;style=root-tiled
