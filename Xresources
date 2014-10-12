@@ -1,11 +1,24 @@
 
 !prettiness
 URxvt.transparent: True
-URxvt.shading: 40
+URxvt.shading: 50
 !URxvt.internalBorder: 0
 !URxvt.externalBorder: 0
 !URxvt.backgroundPixmap: /usr/share/backgrounds/images/default.png;style=root-tiled
-URxvt.scrollBar: False
+URxvt.ouseWheelScrollPage: 1
+URxvt.secondaryScreen: 1
+URxvt.secondaryScroll: 1
+URxvt.secondaryWheel: 1
+
+URxvt.scrollBar: True
+URxvt.scrollBar_right: True
+
+! do not scroll with output
+URxvt.scroolTtyOutput: false
+! scroll in relation to buffer (with mouse scroll or Shift+Page Up)
+! URxvt*scrollWithBuffer: true
+! ! scroll back to the bottom on keypress
+! URxvt*scrollTtyKeypress: true
 
 URxvt.cursorBlink: True
 
