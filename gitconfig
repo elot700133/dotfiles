@@ -30,9 +30,11 @@
   status = auto
   branch = auto
   ui = auto
+[merge]
+  tool = gvimdiff
 [mergetool]
   keepBackup = false
 [difftool]
   prompt = false
 [diff]
-  tool = meld
+  tool = gvimdiff
