@@ -1,3 +1,6 @@
+! Display all options on screen
+!urxvt --help 2>&1| sed -n '/:  /s/^ */! URxvt*/gp'!
+
 
 !prettiness
 URxvt.transparent: True
@@ -5,13 +8,19 @@ URxvt.shading: 50
 !URxvt.internalBorder: 0
 !URxvt.externalBorder: 0
 !URxvt.backgroundPixmap: /usr/share/backgrounds/images/default.png;style=root-tiled
-URxvt.ouseWheelScrollPage: 1
+
+! 
+URxvt.mouseWheelScrollPage: 1
 URxvt.secondaryScreen: 1
 URxvt.secondaryScroll: 1
 URxvt.secondaryWheel: 1
 
+! display scroll bar
 URxvt.scrollBar: True
+! scroll bar right hand side
 URxvt.scrollBar_right: True
+! save number of lines in scroll back buffer
+URxvt.saveLines: 10000
 
 ! do not scroll with output
 URxvt.scroolTtyOutput: false
