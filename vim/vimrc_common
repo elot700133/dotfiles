@@ -28,7 +28,7 @@ set textwidth=79
 "------------------------------------------------------------------------------
 " Color
 "------------------------------------------------------------------------------
-"colorscheme desert
+colorscheme darkblue
 "set background=dark
 "set background=light
 
