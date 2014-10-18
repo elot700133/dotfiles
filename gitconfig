@@ -1,26 +1,26 @@
 [alias]
-  st = status -s
+  alias = !git config --list | grep 'alias\\.' | sed 's/alias\\.\\([^=]*\\)=\\(.*\\)/\\1\\t=> \\2/' | sort
+  br = branch
   ci = commit
   co = checkout
-  fo = fetch origin --progress --prune
   df = diff
-  ck = cherry-pick
-  undo = reset --hard # go back to a certian commit
-  ci = commit
-  br = branch
-  unstage = reset HEAD --
+  dc = diff --cached
+  ign = ls-files -o -i --exclude-standard
+  fo = fetch origin --progress --prune
+  lg = log --pretty=oneline -n 20 --graph --abbrev-commit
   last = log -1 HEAD
-  l = log --pretty=oneline -n 20 --graph --abbrev-commit
+  list-changed-files = diff-tree --no-commit-id --name-only -r #<sha id>
   lol = log --graph --date-order -C -M --pretty=format:\"%C(auto)<%h> %Creset%C(auto)%ar %Creset%C(auto)[%an] %C(auto)%d%Creset %s\" --date=relative --color
   #log all
   loa = log --graph --date-order -C -M --pretty=format:\"%C(auto)<%h> %Creset%C(auto)%ar %Creset%C(auto)[%an] %C(auto)%d%Creset %s\" --all --date=relative --color
-  lg = !"git lg1"
   logall = log --pretty=format:\"%an %ae %ad %ar %cn %ce %cd %cr %s\"
-  rf = checkout --  # revert a file
-  alias = !git config --list | grep 'alias\\.' | sed 's/alias\\.\\([^=]*\\)=\\(.*\\)/\\1\\t=> \\2/' | sort
   # shows commit counts
   pulse = shortlog -s --
-  list-changed-files = diff-tree --no-commit-id --name-only -r #<sha id>
+  rf = checkout --  # revert a file
+  goto = reset --hard # go to a certian commit
+  # unstage all when no argument is supplied
+  unstage = reset HEAD --
+  st = status -s
   # submodule
   sm = submodule
 [push]
@@ -28,8 +28,8 @@
 [color]
   diff = auto
   status = auto
-  branch = auto
-  ui = auto
+ branch = auto
+ ui = auto
 [merge]
   tool = gvimdiff
 [mergetool]
