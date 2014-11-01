@@ -23,8 +23,10 @@ syntax enable
 " show line number
 set number
 set path+=**
-set textwidth=79
+" set textwidth=79
 
+" Allows switching modified buffers
+set modifiable
 "------------------------------------------------------------------------------
 " Color
 "------------------------------------------------------------------------------
