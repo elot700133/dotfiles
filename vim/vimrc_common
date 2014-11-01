@@ -26,7 +26,8 @@ set path+=**
 " set textwidth=79
 
 " Allows switching modified buffers
-set modifiable
+"set modifiable
+
 "------------------------------------------------------------------------------
 " Color
 "------------------------------------------------------------------------------
@@ -164,6 +165,12 @@ let g:EasyMotion_smartcase = 1
 " JK motions: Line motions
 map <Leader>j <Plug>(easymotion-j)
 map <Leader>k <Plug>(easymotion-k)
+
+"------------------------------------------------------------------------------
+" taglist
+"------------------------------------------------------------------------------
+
+map <F4> :TlistToggle<CR>
 
 "------------------------------------------------------------------------------
 " VTreeExplore
