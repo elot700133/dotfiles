@@ -120,7 +120,7 @@ let g:ctrlp_cmd = 'CtrlP'
 "------------------------------------------------------------------------------
 " NERDTree 
 "------------------------------------------------------------------------------
-map <F5> :VTreeExplore<CR>
+" map <F5> :VSTreeExplore<CR>
 
 "------------------------------------------------------------------------------
 " make 
@@ -164,6 +164,15 @@ map <Leader>j <Plug>(easymotion-j)
 map <Leader>k <Plug>(easymotion-k)
 
 "------------------------------------------------------------------------------
+" VTreeExplore
+"------------------------------------------------------------------------------
+
+map <F5> :VSTreeExplore<CR>
+let treeExplVertical = 0 " 
+let treeExplWinSize = 35 " menu window size
+let treeExplDirSort = 1 " dir sort first
+
+"------------------------------------------------------------------------------
 " how to
 "------------------------------------------------------------------------------
 
@@ -199,7 +208,7 @@ map <Leader>k <Plug>(easymotion-k)
 " q:
 "
 " bookmark
-" M<letter> " to create a bookmark name 'a' (can use a-z)
+" m<letter> " to create a bookmark name 'a' (can use a-z)
 " `<letter> " back tick 'a' go to that bookmark
 "
 " record a macro command
@@ -209,4 +218,7 @@ map <Leader>k <Plug>(easymotion-k)
 "
 " multiple files find and replace
 " :arg *.cpp 
-" :argdo s/old/new/ge | update
+" :argdo s/old/new/ge | updated
+"
+" Massive find in tmux+vim
+" :Dispatch ack <word> --cpp
