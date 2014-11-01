@@ -34,3 +34,6 @@
 [submodule "vim/bundle/vtreeexplorer"]
 	path = vim/bundle/vtreeexplorer
 	url = https://github.com/vim-scripts/vtreeexplorer.git
+[submodule "vim/bundle/dispatch"]
+	path = vim/bundle/dispatch
+	url = https://github.com/tpope/vim-dispatch.git
