@@ -73,11 +73,18 @@ set pastetoggle=<F4>  "paste mode
 
 map <F12> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR><CR>
 
-" moving between windows
+
+"------------------------------------------------------------------------------
+" Windows
+"------------------------------------------------------------------------------
+" move focus
 map <C-j> <C-W>j
 map <C-k> <C-W>k
 map <C-h> <C-W>h
 map <C-l> <C-W>l
+" split defaults
+set splitbelow
+set splitright
 
 " resize windows
 "map + <C-W>+
