@@ -1,10 +1,11 @@
 ! Display all options on screen
 !urxvt --help 2>&1| sed -n '/:  /s/^ */! URxvt*/gp'!
 
+! transparent
+!URxvt.transparent: True
+!URxvt.shading: 50
 
-!prettiness
-URxvt.transparent: True
-URxvt.shading: 50
+! Border
 !URxvt.internalBorder: 0
 !URxvt.externalBorder: 0
 !URxvt.backgroundPixmap: /usr/share/backgrounds/images/default.png;style=root-tiled
