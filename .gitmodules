@@ -52,3 +52,6 @@
 [submodule "vim/bundle/easygrep"]
 	path = vim/bundle/easygrep
 	url = https://github.com/vim-scripts/EasyGrep.git
+[submodule "vim/bundle/tagbar"]
+	path = vim/bundle/tagbar
+	url = https://github.com/majutsushi/tagbar.git
