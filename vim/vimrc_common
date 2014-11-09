@@ -60,7 +60,7 @@ set lazyredraw
 set noerrorbells
 set novisualbell
 
-map <F1> :help
+set pastetoggle=<F2>  "paste mode
 
 " ctags
 " ctrl + \ to tab window definition
@@ -69,11 +69,12 @@ map <F1> :help
 " map <F3> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
 map <F3> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
 
-set pastetoggle=<F4>  "paste mode
 
 map <F12> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR><CR>
 
+" set a different mapleader instead of \
 let mapleader = ","
+
 "------------------------------------------------------------------------------
 " Windows
 "------------------------------------------------------------------------------
