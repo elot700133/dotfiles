@@ -75,6 +75,8 @@ map <F12> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR><CR>
 " set a different mapleader instead of \
 let mapleader = ","
 
+set noswapfile
+
 "------------------------------------------------------------------------------
 " Windows
 "------------------------------------------------------------------------------
@@ -90,11 +92,15 @@ set splitright
 " resize windows
 "map + <C-W>+
 "map - <C-W>-
-map <silent> <UP> :resize +3<CR>
-map <silent> <DOWN> :resize -3<CR>
-map <silent> <RIGHT> :vertical resize +3<CR>
-map <silent> <LEFT> :vertical resize -3<CR>
+"map <silent> <C-UP> :resize +3<CR>
+"map <silent> <C-DOWN> :resize -3<CR>
+"map <silent> <C-RIGHT> :vertical resize +3<CR>
+"map <silent> <C-LEFT> :vertical resize -3<CR>
 
+map <silent> k :resize +3<CR>
+map <silent> j :resize -3<CR>
+map <silent> l :vertical resize +3<CR>
+map <silent> h :vertical resize -3<CR>
 " tab
 " gvim - display tab as [Num]Filename+Modified status 
 set guitablabel=\[%N\]\ %t\ %M 
