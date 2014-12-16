@@ -80,11 +80,12 @@ set noswapfile
 "------------------------------------------------------------------------------
 " Windows
 "------------------------------------------------------------------------------
-" move focus
-map <C-j> <C-W>j
-map <C-k> <C-W>k
-map <C-h> <C-W>h
-map <C-l> <C-W>l
+" move focus (vim-tmux-navigator is providing this capability)
+"map <C-j> <C-W>j
+"map <C-k> <C-W>k
+"map <C-h> <C-W>h
+"map <C-l> <C-W>l
+
 " split defaults
 set splitbelow
 set splitright
