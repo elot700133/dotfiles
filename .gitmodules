@@ -73,3 +73,6 @@
 [submodule "vim/bundle/autoclose"]
 	path = vim/bundle/autoclose
 	url = https://github.com/Townk/vim-autoclose.git
+[submodule "vim/bundle/colors-solarized"]
+	path = vim/bundle/colors-solarized
+	url = https://github.com/altercation/vim-colors-solarized.git
