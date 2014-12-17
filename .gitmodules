@@ -79,3 +79,6 @@
 [submodule "vim/bundle/tmux-navigator"]
 	path = vim/bundle/tmux-navigator
 	url = https://github.com/christoomey/vim-tmux-navigator.git
+[submodule "vim/bundle/doxygen-toolkit"]
+	path = vim/bundle/doxygen-toolkit
+	url = https://github.com/vim-scripts/DoxygenToolkit.vim.git
