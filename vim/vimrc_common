@@ -31,9 +31,18 @@ set path+=**
 "------------------------------------------------------------------------------
 " Color
 "------------------------------------------------------------------------------
-colorscheme darkblue
-"set background=dark
-"set background=light
+if has("gui_running")
+  colorscheme solarized
+  set background=dark
+  "set background=light
+  
+  " gvim - display tab as [Num]Filename+Modified status 
+  set guitablabel=\[%N\]\ %t\ %M 
+else
+  colorscheme darkblue
+  "set background=dark
+  "set background=light
+endif
 
 "------------------------------------------------------------------------------
 " Interface
@@ -93,18 +102,17 @@ set splitright
 " resize windows
 "map + <C-W>+
 "map - <C-W>-
-"map <silent> <C-UP> :resize +3<CR>
-"map <silent> <C-DOWN> :resize -3<CR>
-"map <silent> <C-RIGHT> :vertical resize +3<CR>
-"map <silent> <C-LEFT> :vertical resize -3<CR>
+map <silent> <C-UP>    : resize +3<CR>
+map <silent> <C-DOWN>  : resize -3<CR>
+map <silent> <C-RIGHT> : vertical resize +3<CR>
+map <silent> <C-LEFT>  : vertical resize -3<CR>
 
-map <silent> k :resize +3<CR>
-map <silent> j :resize -3<CR>
-map <silent> l :vertical resize +3<CR>
-map <silent> h :vertical resize -3<CR>
+"map <silent> k :resize +3<CR>
+"map <silent> j :resize -3<CR>
+"map <silent> l :vertical resize +3<CR>
+"map <silent> h :vertical resize -3<CR>
+
 " tab
-" gvim - display tab as [Num]Filename+Modified status 
-set guitablabel=\[%N\]\ %t\ %M 
 " ctrl+shift+H or L
 map ` gt<CR>
 map 1 1gt<CR>
@@ -252,3 +260,6 @@ let treeExplDirSort = 1 " dir sort first
 "
 " Massive find in tmux+vim
 " :Dispatch ack <word> --cpp
+"
+" Search and Replace
+" :%s/string1/string2/gnc
