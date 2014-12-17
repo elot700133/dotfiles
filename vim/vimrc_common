@@ -102,10 +102,10 @@ set splitright
 " resize windows
 "map + <C-W>+
 "map - <C-W>-
-map <silent> <C-UP>    : resize +3<CR>
-map <silent> <C-DOWN>  : resize -3<CR>
-map <silent> <C-RIGHT> : vertical resize +3<CR>
-map <silent> <C-LEFT>  : vertical resize -3<CR>
+map <C-UP> :resize +3<CR>
+map <C-DOWN> :resize -3<CR>
+map <C-RIGHT> :vertical resize +3<CR>
+map <C-LEFT> :vertical resize -3<CR>
 
 "map <silent> k :resize +3<CR>
 "map <silent> j :resize -3<CR>
@@ -215,6 +215,7 @@ let treeExplDirSort = 1 " dir sort first
 "------------------------------------------------------------------------------
 let g:clang_use_library=1
 let g:clang_complete_auto=0 "use C-x C-o instead"
+
 "------------------------------------------------------------------------------
 " how to
 "------------------------------------------------------------------------------
