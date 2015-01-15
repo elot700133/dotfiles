@@ -44,6 +44,9 @@ export HISTTIMEFORMAT="[$(tput setaf 6)%F %T$(tput sgr0)]: " # colorful date
 # alias common for all distros
 source ~/.bash_alias 
 
+print_bach_emblem()
+{
+
 echo "  ...........  .... ... ................"
 echo "    ......... ...?M.DM. ... ...  .... .."
 echo "  .  ...........M  M=.M,.  ........  ..."
@@ -75,3 +78,5 @@ echo "      .... MMM.... M~ ... MM,..........."
 echo "            ..IMM....MMMM7.MM..........."
 echo "            ..........M................."
 echo "            ..................... ......"
+
+}
