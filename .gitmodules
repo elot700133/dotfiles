@@ -82,3 +82,6 @@
 [submodule "vim/bundle/doxygen-toolkit"]
 	path = vim/bundle/doxygen-toolkit
 	url = https://github.com/vim-scripts/DoxygenToolkit.vim.git
+[submodule "vim/bundle/dirdiff"]
+	path = vim/bundle/dirdiff
+	url = https://github.com/will133/vim-dirdiff.git
