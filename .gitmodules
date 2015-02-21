@@ -30,7 +30,7 @@
 	url = https://github.com/honza/vim-snippets.git
 [submodule "vim/bundle/tabline"]
 	path = vim/bundle/tabline
-	url = https://github.com/elot700133/tabline.vim
+	url = https://github.com/mkitt/tabline.vim
 [submodule "vim/bundle/vtreeexplorer"]
 	path = vim/bundle/vtreeexplorer
 	url = https://github.com/vim-scripts/vtreeexplorer.git
