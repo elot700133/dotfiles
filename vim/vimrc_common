@@ -107,10 +107,23 @@ map <C-DOWN> :resize -3<CR>
 map <C-RIGHT> :vertical resize +3<CR>
 map <C-LEFT> :vertical resize -3<CR>
 
+"map [A :resize +3<CR>
+"map [B :resize -3<CR>
+"map [C :vertical resize +3<CR>
+"map [D :vertical resize -3<CR>
+
 "map <silent> k :resize +3<CR>
 "map <silent> j :resize -3<CR>
 "map <silent> l :vertical resize +3<CR>
 "map <silent> h :vertical resize -3<CR>
+
+if &term =~ '^screen'
+    " tmux will send xterm-style keys when its xterm-keys option is on
+    execute "set <xUp>=\e[1;*A"
+    execute "set <xDown>=\e[1;*B"
+    execute "set <xRight>=\e[1;*C"
+    execute "set <xLeft>=\e[1;*D"
+endif"
 
 " tab
 " ctrl+shift+H or L
@@ -213,6 +226,7 @@ let treeExplDirSort = 1 " dir sort first
 "------------------------------------------------------------------------------
 " clang_complete
 "------------------------------------------------------------------------------
+
 let g:clang_use_library=1
 let g:clang_complete_auto=0 "use C-x C-o instead"
 let g:clang_user_options='-std=c++11 -pthread'
@@ -220,7 +234,16 @@ let g:clang_user_options='-std=c++11 -pthread'
 "------------------------------------------------------------------------------
 " arpeggio
 "------------------------------------------------------------------------------
+
 call arpeggio#map('i', '', 0, 'jk', '<Esc>')
+call arpeggio#map('c', '', 0, 'jk', '<Esc>')
+
+"------------------------------------------------------------------------------
+" DirDiff
+"------------------------------------------------------------------------------
+
+let g:DirDiffExcludes = ".git,.*.swp"
+
 "------------------------------------------------------------------------------
 " how to
 "------------------------------------------------------------------------------
