@@ -38,3 +38,5 @@
   prompt = false
 [diff]
   tool = gvimdiff
+[core]
+  autocrlf = input
