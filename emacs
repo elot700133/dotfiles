@@ -31,6 +31,7 @@
     magit
     cmake-project
     auto-complete-etags
+    auto-complete-clang
     )
   "List of packages needs to be installed at launch")
 
@@ -62,11 +63,12 @@
 ;; irony
 (require 'irony)
 ;;----------------------------------------------
-(require 'evil)
-(evil-mode 1)
+;;(require 'evil)
+;;(evil-mode 1)
 ;;----------------------------------------------
 ;; Emacs Code Browser
 (require 'ecb)
+(require 'ecb-autoloads)
 ;;----------------------------------------------
 ;; autocomplete
 (require 'auto-complete)
@@ -81,6 +83,9 @@
 (eval-after-load "etags"
   '(progn
       (ac-etags-setup)))
+;; auto-complete-clang
+(require 'auto-complete-clang)
+(setq mf--source-file-extension "cpp")
 
 (add-hook 'c-mode-common-hook 'ac-etags-ac-setup)
 (add-hook 'ruby-mode-common-hook 'ac-etags-ac-setup)
