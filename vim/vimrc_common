@@ -48,6 +48,8 @@ endif
 "------------------------------------------------------------------------------
 " Interface
 "------------------------------------------------------------------------------
+" set a different mapleader instead of \
+let mapleader = ","
 set wildmenu
 set wildmode=list:longest,full
 set wildignore+=*.o,*~,*.so,*.swp,*.zip,.git,*/doxygen/*
@@ -76,14 +78,13 @@ set pastetoggle=<F2>  "paste mode
 " ctrl + \ to tab window definition
 "map <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR> 
 " alt + \ to vertical split definition
-" map <F3> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
-map <F3> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
+map <Leader>d :exec("tag ".expand("<cword>"))<CR>
+map <Leader>dd :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
+map <Leader>ddd :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
 
 
 map <F12> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR><CR>
 
-" set a different mapleader instead of \
-let mapleader = ","
 
 set noswapfile
 
@@ -151,6 +152,8 @@ set smartindent "Smart indent
 "set wrap "Wrap lines
 set nowrap "no wrapping text
 
+set foldmethod=syntax
+set foldcolumn=2
 "------------------------------------------------------------------------------
 " CtrlP
 "------------------------------------------------------------------------------
@@ -223,6 +226,7 @@ map <F5> :VSTreeExplore<CR>
 let treeExplVertical = 0 " 
 let treeExplWinSize = 35 " menu window size
 let treeExplDirSort = 1 " dir sort first
+let treeExplHidden = 1 " show hidden files
 
 "------------------------------------------------------------------------------
 " clang_complete
