@@ -1,0 +1,7 @@
+#!/usr/bin/bash
+
+
+#while true; do clear; git lol -30 | cat; sleep 5; done
+watch -n 1  -ct "pwd; git lol -20; echo; echo; git status"
+#watch -n1 -ct "echo -n {mfp_sec,mfp,lmf,dds_wrapper,thirdparty} |xargs -d ' ' -I % bash -c 'cd %; pwd ; git lol -10; git status'"
+#watch -n1 -ct "echo -n {mfp_sec,mfp} |xargs -d ' ' -I % bash -c 'cd %; pwd ; git lol -20; git status'"
