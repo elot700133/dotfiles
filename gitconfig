@@ -5,6 +5,7 @@
   co = checkout
   df = diff
   dc = diff --cached
+  compare = difftool -t meld -d
   ign = ls-files -o -i --exclude-standard
   fo = fetch origin --progress --prune
   lg = log --pretty=oneline -n 20 --graph --abbrev-commit

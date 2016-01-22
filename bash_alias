@@ -40,6 +40,7 @@ alias turnoff='sudo shutdown -h +0'
 alias vi='vim'
 alias firefox='find $HOME/.mozilla | grep lock | xargs -n 1 rm; firefox'
 alias gitcola='git cola'
+alias gitc='git cola'
 alias ss1='ssh root@10.10.1.1'
 alias ss2='ssh root@10.10.1.2'
 
@@ -63,7 +64,7 @@ up () {
 # $3~ patterh "s@old@new@g"
 # find-replace ~/foo '*.cpp' "s@bar@char@g"
 find-replace () {
-  find $1 -type f -iname $2 -exec sed -i.bk $3 "{}" +;
+  find $1 -type f -iname $2 -exec sed -i $3 "{}" +;
 }
 
 display-colors() {
