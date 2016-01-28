@@ -45,6 +45,9 @@ else
   "set background=light
 endif
 
+" Paint a color vertical line at column
+"set colorcolumn=80
+
 "------------------------------------------------------------------------------
 " Interface
 "------------------------------------------------------------------------------
@@ -82,11 +85,17 @@ map <Leader>d :exec("tag ".expand("<cword>"))<CR>
 map <Leader>dd :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
 map <Leader>ddd :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
 
-
-map <F12> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR><CR>
-
-
 set noswapfile
+
+"------------------------------------------------------------------------------
+" Function Keys
+"------------------------------------------------------------------------------
+map <F4> :TagbarToggle<CR>
+"map <F4> :TlistToggle<CR>
+map <F5> :VSTreeExplore<CR>
+"map <F7> :make -s -C
+map <F7> :Dispatch make -s -C
+map <F12> :!ctags -R --exclude='build' --exclude='.git' --exclude='.svn' --c++-kinds=+p --fields=+iaS --extra=+q .<CR><CR>
 
 "------------------------------------------------------------------------------
 " Windows
@@ -104,10 +113,10 @@ set splitright
 " resize windows
 "map + <C-W>+
 "map - <C-W>-
-map <C-UP> :resize +3<CR>
-map <C-DOWN> :resize -3<CR>
-map <C-RIGHT> :vertical resize +3<CR>
-map <C-LEFT> :vertical resize -3<CR>
+"map <C-UP> :resize +3<CR>
+"map <C-DOWN> :resize -3<CR>
+"map <C-RIGHT> :vertical resize +3<CR>
+"map <C-LEFT> :vertical resize -3<CR>
 
 "map [A :resize +3<CR>
 "map [B :resize -3<CR>
@@ -119,13 +128,17 @@ map <C-LEFT> :vertical resize -3<CR>
 "map <silent> l :vertical resize +3<CR>
 "map <silent> h :vertical resize -3<CR>
 
+map [A :resize +3<CR>
+map [B :resize -3<CR>
+map [C :vertical resize +3<CR>
+map [D :vertical resize -3<CR>
 if &term =~ '^screen'
     " tmux will send xterm-style keys when its xterm-keys option is on
     execute "set <xUp>=\e[1;*A"
     execute "set <xDown>=\e[1;*B"
     execute "set <xRight>=\e[1;*C"
     execute "set <xLeft>=\e[1;*D"
-endif"
+endif
 
 " tab
 " ctrl+shift+H or L
@@ -155,21 +168,30 @@ set nowrap "no wrapping text
 set foldmethod=syntax
 set foldcolumn=2
 set foldlevel=20
+
 "------------------------------------------------------------------------------
 " CtrlP
 "------------------------------------------------------------------------------
 let g:ctrlp_map = '<c-p>' 
 let g:ctrlp_cmd = 'CtrlP' 
 
+let g:ctrlp_use_caching = 1
+let g:ctrlp_show_hidden = 1
+
+"don't change directory in ctrlp
+let g:ctrlp_working_path_mode = '0'
+
+"follow symlinks
+let g:ctrlp_follow_symlinks = 2
+
+"ignore following symlinks
+let g:ctrlp_custom_ignore = {
+  \ 'dir': '\v[\/](build)$',
+  \}
 "------------------------------------------------------------------------------
 " NERDTree 
 "------------------------------------------------------------------------------
-" map <F5> :VSTreeExplore<CR>
 
-"------------------------------------------------------------------------------
-" make 
-"------------------------------------------------------------------------------
-map <F7> :make -s -C
 
 "------------------------------------------------------------------------------
 " OmniCppComplete
@@ -211,19 +233,14 @@ map <Leader>k <Plug>(easymotion-k)
 " taglist
 "------------------------------------------------------------------------------
 
-"map <F4> :TlistToggle<CR>
-
 "------------------------------------------------------------------------------
 " tagbar
 "------------------------------------------------------------------------------
-
-map <F4> :TagbarToggle<CR>
 
 "------------------------------------------------------------------------------
 " VTreeExplore
 "------------------------------------------------------------------------------
 
-map <F5> :VSTreeExplore<CR>
 let treeExplVertical = 0 " 
 let treeExplWinSize = 35 " menu window size
 let treeExplDirSort = 1 " dir sort first
