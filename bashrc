@@ -42,6 +42,7 @@ export HISTCONTROL=ignoredups # ignorespace
 export HISTTIMEFORMAT="[$(tput setaf 6)%F %T$(tput sgr0)]: " # colorful date
 
 # alias common for all distros
+source ~/.bashrc_custom
 source ~/.bash_alias 
 
 print_bach_emblem()
