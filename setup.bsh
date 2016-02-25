@@ -1,32 +1,21 @@
 #!/usr/bin/bash
-
+home_folder=$1
 dir=`pwd`
-files="bashrc bash_alias git-prompt.sh git-completion.bsh tmux.conf vim inputrc Xresources emacs"
-backup_dir=~/.dotfiles_backup
+files=".bashrc .bash_alias .gitconfig .git-prompt.sh .git-completion.bsh .tmux.conf .vim .inputrc .Xresources .emacs"
+backup_dir=$home_folder/.dotfiles_backup
 
 # make backup
 echo "Creating $backup_dir for backup of any existing dotfiles"
 mkdir -p $backup_dir
 for file in $files; do
-  mv -v ~/.$file $backup_dir
+  mv -v $home_folder/$file $backup_dir
 done
 echo "...done"
 
 # create symlinks
 echo "Create symlinks"
 for file in $files; do
-    ln -sv $dir/$file ~/.$file
+    ln -sv $dir/$file $home_folder/$file
 done
 echo "...done"
-
-
-# .gitconfig
-if [ `grep "\[include\]" ~/.gitconfig -c` -eq 0 ]
-then
-  echo -e "[include]\n\tpath=`pwd`/.gitconfig" >> ~/.gitconfig
-fi
-
-
-
-
 

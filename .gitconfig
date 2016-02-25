@@ -42,3 +42,5 @@
   tool = default-difftool
 [core]
   autocrlf = input
+[include]
+	path=~/.gitconfig_custom
