@@ -1,90 +1,90 @@
 [submodule "vim/bundle/fugitive"]
-	path = vim/bundle/fugitive
+	path = .vim/bundle/fugitive
 	url = http://github.com/tpope/vim-fugitive.git
 [submodule "vim/bundle/omnicppcomplete"]
-	path = vim/bundle/omnicppcomplete
+	path = .vim/bundle/omnicppcomplete
 	url = https://github.com/vim-scripts/OmniCppComplete.git
 [submodule "vim/bundle/easymotion"]
-	path = vim/bundle/easymotion
+	path = .vim/bundle/easymotion
 	url = https://github.com/Lokaltog/vim-easymotion.git
 [submodule "vim/bundle/ctrlp"]
-	path = vim/bundle/ctrlp
+	path = .vim/bundle/ctrlp
 	url = https://github.com/kien/ctrlp.vim.git
 [submodule "vim/bundle/alternate"]
-	path = vim/bundle/alternate
+	path = .vim/bundle/alternate
 	url = https://github.com/vim-scripts/a.vim.git
 [submodule "vim/bundle/autocomplpop"]
-	path = vim/bundle/autocomplpop
+	path = .vim/bundle/autocomplpop
 	url = https://github.com/vim-scripts/AutoComplPop.git
 [submodule "vim/bundle/snipmate"]
-	path = vim/bundle/snipmate
+	path = .vim/bundle/snipmate
 	url = https://github.com/garbas/vim-snipmate.git
 [submodule "vim/bundle/addon-mw-utils"]
-	path = vim/bundle/addon-mw-utils
+	path = .vim/bundle/addon-mw-utils
 	url = https://github.com/MarcWeber/vim-addon-mw-utils.git
 [submodule "vim/bundle/tlib"]
-	path = vim/bundle/tlib
+	path = .vim/bundle/tlib
 	url = https://github.com/tomtom/tlib_vim.git
 [submodule "vim/bundle/snippets"]
-	path = vim/bundle/snippets
+	path = .vim/bundle/snippets
 	url = https://github.com/honza/vim-snippets.git
 [submodule "vim/bundle/tabline"]
-	path = vim/bundle/tabline
+	path = .vim/bundle/tabline
 	url = https://github.com/mkitt/tabline.vim
 [submodule "vim/bundle/vtreeexplorer"]
-	path = vim/bundle/vtreeexplorer
+	path = .vim/bundle/vtreeexplorer
 	url = https://github.com/vim-scripts/vtreeexplorer.git
 [submodule "vim/bundle/dispatch"]
-	path = vim/bundle/dispatch
+	path = .vim/bundle/dispatch
 	url = https://github.com/tpope/vim-dispatch.git
 [submodule "vim/bundle/taglist"]
-	path = vim/bundle/taglist
+	path = .vim/bundle/taglist
 	url = https://github.com/vim-scripts/taglist.vim.git
 [submodule "vim/bundle/ack"]
-	path = vim/bundle/ack
+	path = .vim/bundle/ack
 	url = https://github.com/mileszs/ack.vim.git
 [submodule "vim/bundle/airline"]
-	path = vim/bundle/airline
+	path = .vim/bundle/airline
 	url = https://github.com/bling/vim-airline.git
 [submodule "vim/bundle/csv"]
-	path = vim/bundle/csv
+	path = .vim/bundle/csv
 	url = https://github.com/chrisbra/csv.vim.git
 [submodule "vim/bundle/easygrep"]
-	path = vim/bundle/easygrep
+	path = .vim/bundle/easygrep
 	url = https://github.com/vim-scripts/EasyGrep.git
 [submodule "vim/bundle/tagbar"]
-	path = vim/bundle/tagbar
+	path = .vim/bundle/tagbar
 	url = https://github.com/majutsushi/tagbar.git
 [submodule "vim/bundle/clang_complete"]
-	path = vim/bundle/clang_complete
+	path = .vim/bundle/clang_complete
 	url = https://github.com/Rip-Rip/clang_complete.git
 [submodule "vim/bundle/tabular"]
-	path = vim/bundle/tabular
+	path = .vim/bundle/tabular
 	url = https://github.com/godlygeek/tabular.git
 [submodule "vim/bundle/nerdcommenter"]
-	path = vim/bundle/nerdcommenter
+	path = .vim/bundle/nerdcommenter
 	url = https://github.com/scrooloose/nerdcommenter.git
 [submodule "vim/bundle/syntastic"]
-	path = vim/bundle/syntastic
+	path = .vim/bundle/syntastic
 	url = https://github.com/scrooloose/syntastic.git
 [submodule "vim/bundle/surround"]
-	path = vim/bundle/surround
+	path = .vim/bundle/surround
 	url = https://github.com/tpope/vim-surround.git
 [submodule "vim/bundle/autoclose"]
-	path = vim/bundle/autoclose
+	path = .vim/bundle/autoclose
 	url = https://github.com/Townk/vim-autoclose.git
 [submodule "vim/bundle/colors-solarized"]
-	path = vim/bundle/colors-solarized
+	path = .vim/bundle/colors-solarized
 	url = https://github.com/altercation/vim-colors-solarized.git
 [submodule "vim/bundle/tmux-navigator"]
-	path = vim/bundle/tmux-navigator
+	path = .vim/bundle/tmux-navigator
 	url = https://github.com/christoomey/vim-tmux-navigator.git
 [submodule "vim/bundle/doxygen-toolkit"]
-	path = vim/bundle/doxygen-toolkit
+	path = .vim/bundle/doxygen-toolkit
 	url = https://github.com/vim-scripts/DoxygenToolkit.vim.git
 [submodule "vim/bundle/dirdiff"]
-	path = vim/bundle/dirdiff
+	path = .vim/bundle/dirdiff
 	url = https://github.com/will133/vim-dirdiff.git
 [submodule "vim/bundle/arpeggio"]
-	path = vim/bundle/arpeggio
+	path = .vim/bundle/arpeggio
 	url = https://github.com/kana/vim-arpeggio
