@@ -7,7 +7,7 @@
 set bell-style none
 
 # common path
-export PATH=$PATH:~/bin:/opt
+# export PATH=$PATH
 
 # 
 export EDITOR="vim"

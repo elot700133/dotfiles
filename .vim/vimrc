@@ -28,6 +28,8 @@ set path+=**
 " Allows switching modified buffers
 "set modifiable
 
+set history=1000
+
 "------------------------------------------------------------------------------
 " Color
 "------------------------------------------------------------------------------
@@ -182,11 +184,12 @@ let g:ctrlp_show_hidden = 1
 let g:ctrlp_working_path_mode = '0'
 
 "follow symlinks
-let g:ctrlp_follow_symlinks = 2
+let g:ctrlp_follow_symlinks = 1
 
 "ignore following symlinks
 let g:ctrlp_custom_ignore = {
-  \ 'dir': '\v[\/](build)$',
+  \ 'dir':  '\v[\/](build|\.git|\.hg|\.svn)$',
+  \ 'file': '\v.(exe|so|dll)$',
   \}
 "------------------------------------------------------------------------------
 " NERDTree 
@@ -286,7 +289,7 @@ let g:DoxygenToolkit_authorName = "Too Lee"
 "------------------------------------------------------------------------------
 " source custom vimrc to an account
 "------------------------------------------------------------------------------
-if filereadable("~/.vimrc_custom")
+if filereadable("/home/tpleeto1/.vimrc_custom")
   source ~/.vimrc_custom
 endif
 

@@ -1,7 +1,7 @@
 #!/usr/bin/bash
 home_folder=$1
 dir=`pwd`
-files=".bashrc .bash_alias .gitconfig .git-prompt.sh .git-completion.bsh .tmux.conf .vim .inputrc .Xresources .emacs"
+files=".bashrc .bash_alias .gitconfig .git-prompt.sh .git-completion.bsh .kshrc .tmux.conf .vim .inputrc .Xresources .emacs"
 backup_dir=$home_folder/.dotfiles_backup
 
 # make backup
