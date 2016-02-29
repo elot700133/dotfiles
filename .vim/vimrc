@@ -92,12 +92,13 @@ set noswapfile
 "------------------------------------------------------------------------------
 " Function Keys
 "------------------------------------------------------------------------------
+map <F3> :Dispatch :execute "vimgrep /" . expand("<cword>") . "/ **/*.cpp **/*.hpp **/*.c **/*.h" <Bar> cw 
 map <F4> :TagbarToggle<CR>
 "map <F4> :TlistToggle<CR>
 map <F5> :VSTreeExplore<CR>
 "map <F7> :make -s -C
-map <F7> :Dispatch make -s -C
-map <F12> :!ctags -R --exclude='build' --exclude='.git' --exclude='.svn' --c++-kinds=+p --fields=+iaS --extra=+q .<CR><CR>
+map <F7> :Dispatch make -s -j`nproc` -C
+map <F12> :Dispatch ctags -R --exclude='build' --exclude='.git' --exclude='.svn' --c++-kinds=+p --fields=+iaS --extra=+q .<CR><CR>
 
 "------------------------------------------------------------------------------
 " Windows
