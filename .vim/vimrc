@@ -41,8 +41,8 @@ if has("gui_running")
   " gvim - display tab as [Num]Filename+Modified status
   set guitablabel=\[%N\]\ %t\ %M
 else
-  colorscheme darkblue
-  "colorscheme elflordmod
+  "colorscheme darkblue
+  colorscheme elflordmod
   "set background=dark
   "set background=light
 endif
@@ -290,7 +290,7 @@ let g:DoxygenToolkit_authorName = "Too Lee"
 "------------------------------------------------------------------------------
 " source custom vimrc to an account
 "------------------------------------------------------------------------------
-if filereadable("/home/tpleeto1/.vimrc_custom")
+if filereadable(expand("~/.vimrc_custom"))
   source ~/.vimrc_custom
 endif
 

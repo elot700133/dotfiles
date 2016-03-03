@@ -3,13 +3,10 @@
   br = branch
   ci = commit
   co = checkout
-  df = diff
-  dc = diff --cached
   compare = difftool -t meld -d
   ign = ls-files -o -i --exclude-standard
   fo = fetch origin --progress --prune
   lg = log --pretty=oneline -n 20 --graph --abbrev-commit
-  last = log -1 HEAD
   list-changed-files = diff-tree --no-commit-id --name-only -r #<sha id>
   lol = log --graph --date-order -C -M --pretty=format:\"%C(auto)<%h> %Creset%C(auto)%ar %Creset%C(auto)[%an] %C(auto)%d%Creset %s\" --date=relative --color
   #log all
