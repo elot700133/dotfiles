@@ -21,6 +21,7 @@ set autoread
 syntax enable
 
 " show line number
+set relativenumber
 set number
 set path+=**
 " set textwidth=79
