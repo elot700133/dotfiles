@@ -48,8 +48,9 @@ else
 endif
 
 " Paint a color vertical line at column
-"set colorcolumn=80
-
+highlight OverLength ctermbg=red ctermfg=white guibg=#592929
+match OverLength /\%81v.\+/
+set colorcolumn=80
 "------------------------------------------------------------------------------
 " Interface
 "------------------------------------------------------------------------------
@@ -77,8 +78,6 @@ set lazyredraw
 set noerrorbells
 set novisualbell
 
-set pastetoggle=<F2>  "paste mode
-
 " ctags
 " ctrl + \ to tab window definition
 "map <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR> 
@@ -90,8 +89,9 @@ map <Leader>ddd :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
 set noswapfile
 
 "------------------------------------------------------------------------------
-" Function Keys
+" map bindings 
 "------------------------------------------------------------------------------
+set pastetoggle=<F2>  "paste mode
 map <F3> :Dispatch :execute "vimgrep /" . expand("<cword>") . "/ **/*.cpp **/*.hpp **/*.c **/*.h" <Bar> cw 
 map <F4> :TagbarToggle<CR>
 "map <F4> :TlistToggle<CR>
@@ -99,7 +99,8 @@ map <F5> :VSTreeExplore<CR>
 "map <F7> :make -s -C
 map <F7> :Dispatch make -s -j`nproc` -C
 map <F12> :Dispatch ctags -R --exclude='build' --exclude='.git' --exclude='.svn' --c++-kinds=+p --fields=+iaS --extra=+q .<CR><CR>
-
+map <leader>s :mks! vim.session<CR>
+map <leader>l :source vim.session<CR>
 "------------------------------------------------------------------------------
 " Windows
 "------------------------------------------------------------------------------

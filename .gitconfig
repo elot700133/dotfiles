@@ -3,24 +3,17 @@
   br = branch
   ci = commit
   co = checkout
-  compare = difftool -t meld -d
-  ign = ls-files -o -i --exclude-standard
+  compare = difftool -t vimdiff -d
   fo = fetch origin --progress --prune
   lg = log --pretty=oneline -n 20 --graph --abbrev-commit
   list-changed-files = diff-tree --no-commit-id --name-only -r #<sha id>
   lol = log --graph --date-order -C -M --pretty=format:\"%C(auto)<%h> %Creset%C(auto)%ar %Creset%C(auto)[%an] %C(auto)%d%Creset %s\" --date=relative --color
   #log all
   loa = log --graph --date-order -C -M --pretty=format:\"%C(auto)<%h> %Creset%C(auto)%ar %Creset%C(auto)[%an] %C(auto)%d%Creset %s\" --all --date=relative --color
-  logall = log --pretty=format:\"%an %ae %ad %ar %cn %ce %cd %cr %s\"
   # shows commit counts
   pulse = shortlog -s --
   rf = checkout --  # revert a file
-  goto = reset --hard # go to a certian commit
-  # unstage all when no argument is supplied
-  unstage = reset HEAD --
   st = status -s
-  # submodule
-  sm = submodule
 [push]
   default = matching
 [color]
@@ -29,7 +22,7 @@
  branch = auto
  ui = auto
 [merge]
-  tool = gvimdiff
+  tool = vimdiff
 [mergetool]
   keepBackup = false
 [difftool "default-difftool"]
