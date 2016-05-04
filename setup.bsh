@@ -1,4 +1,12 @@
 #!/usr/bin/bash
+
+if [ $# -ne 1 ]
+then
+  echo "Error: Wrong number of argument"
+  echo "Usage: setup.bsh <your home dir>"
+  exit -1
+fi
+
 home_folder=$1
 dir=`pwd`
 files=".bashrc .bash_alias .gitconfig .git-prompt.sh .git-completion.bsh .kshrc .tmux.conf .vim .inputrc .Xresources .emacs"
