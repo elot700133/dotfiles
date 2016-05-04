@@ -27,7 +27,7 @@
   keepBackup = false
 [difftool "default-difftool"]
   prompt = false
-  cmd = vim -f '+next' '+execute \"DirDiff\" argv(0) argv(1)' $LOCAL $REMOTE '+syntax off'
+  cmd = vim -f '+colorscheme default'  '+next' '+execute \"DirDiff\" argv(0) argv(1)' $LOCAL $REMOTE '+syntax off'
 [diff]
   tool = default-difftool
 [core]
