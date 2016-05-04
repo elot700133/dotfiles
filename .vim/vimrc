@@ -41,6 +41,8 @@ if has("gui_running")
 
   " gvim - display tab as [Num]Filename+Modified status
   set guitablabel=\[%N\]\ %t\ %M
+elseif &diff
+  colorscheme default
 else
   "colorscheme darkblue
   colorscheme elflordmod
