@@ -50,6 +50,6 @@ hi link Delimiter	Special
 hi link SpecialComment Special
 hi link Debug		Special
 
-hi DiffAdd ctermbg=235
-hi DiffText ctermbg=238
-hi DiffChange ctermbg=Black
+hi DiffAdd ctermbg=Blue
+hi DiffText ctermbg=Red
+hi DiffChange ctermbg=Blue

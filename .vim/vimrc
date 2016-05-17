@@ -42,7 +42,8 @@ if has("gui_running")
   " gvim - display tab as [Num]Filename+Modified status
   set guitablabel=\[%N\]\ %t\ %M
 elseif &diff
-  colorscheme default
+  colorscheme elflordmod
+  syntax off
 else
   "colorscheme darkblue
   colorscheme elflordmod
@@ -261,6 +262,7 @@ let treeExplHidden = 1 " show hidden files
 let g:clang_use_library=1
 let g:clang_complete_auto=0 "use C-x C-o instead"
 let g:clang_user_options='-std=c++11 -pthread'
+let g:clang_format_path="/home/tpleeto1/tools/llvm/build/bin/clang-format"
 
 "------------------------------------------------------------------------------
 " arpeggio
