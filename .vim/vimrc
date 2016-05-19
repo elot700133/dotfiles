@@ -52,9 +52,9 @@ else
 endif
 
 " Paint a color vertical line at column
-highlight OverLength ctermbg=red ctermfg=white guibg=#592929
-match OverLength /\%81v.\+/
-set colorcolumn=80
+"highlight OverLength ctermbg=red ctermfg=white guibg=#592929
+"match OverLength /\%81v.\+/
+"set colorcolumn=80
 "------------------------------------------------------------------------------
 " Interface
 "------------------------------------------------------------------------------
