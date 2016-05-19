@@ -32,5 +32,6 @@
   tool = default-difftool
 [core]
   autocrlf = input
+  excludesfile = ~/.gitignore
 [include]
 	path=~/.gitconfig_custom
