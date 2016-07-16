@@ -43,6 +43,7 @@ Plugin 'christoomey/vim-tmux-navigator.git'
 Plugin 'vim-scripts/DoxygenToolkit.vim.git'
 Plugin 'will133/vim-dirdiff.git'
 Plugin 'kana/vim-arpeggio'
+Plugin 'Valloric/YouCompleteMe'
 call vundle#end()
 
 filetype plugin on
