@@ -4,9 +4,46 @@
 set nocp
 
 " pathogen
-call pathogen#infect()
+"call pathogen#infect()
 "call pathogen#runtime_append_all_bundles()
-call pathogen#helptags()
+"call pathogen#helptags()
+filetype off
+
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'tpope/vim-fugitive.git'
+"Plugin 'vim-scripts/OmniCppComplete.git'
+"Plugin 'Lokaltog/vim-easymotion.git'
+Plugin 'kien/ctrlp.vim.git'
+Plugin 'vim-scripts/a.vim.git'
+"Plugin 'vim-scripts/AutoComplPop.git'
+"Plugin 'garbas/vim-snipmate.git'
+"Plugin 'MarcWeber/vim-addon-mw-utils.git'
+"Plugin 'tomtom/tlib_vim.git'
+"Plugin 'honza/vim-snippets.git'
+"Plugin 'mkitt/tabline.vim'
+Plugin 'vim-scripts/vtreeexplorer.git'
+Plugin 'tpope/vim-dispatch.git'
+"Plugin 'vim-scripts/taglist.vim.git'
+"Plugin 'mileszs/ack.vim.git'
+Plugin 'bling/vim-airline.git'
+"Plugin 'chrisbra/csv.vim.git'
+"Plugin 'vim-scripts/EasyGrep.git'
+"Plugin 'majutsushi/tagbar.git'
+"Plugin 'Rip-Rip/clang_complete.git'
+"Plugin 'godlygeek/tabular.git'
+"Plugin 'scrooloose/nerdcommenter.git'
+"Plugin 'scrooloose/syntastic.git'
+Plugin 'tpope/vim-surround.git'
+Plugin 'Townk/vim-autoclose.git'
+Plugin 'altercation/vim-colors-solarized.git'
+Plugin 'christoomey/vim-tmux-navigator.git'
+Plugin 'vim-scripts/DoxygenToolkit.vim.git'
+Plugin 'will133/vim-dirdiff.git'
+Plugin 'kana/vim-arpeggio'
+call vundle#end()
 
 filetype plugin on
 filetype indent on
