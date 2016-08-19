@@ -105,6 +105,9 @@ map <F7> :Dispatch make -s -j`nproc` -C
 map <F12> :Dispatch ctags -R --exclude='build' --exclude='.git' --exclude='.svn' --c++-kinds=+p --fields=+iaS --extra=+q .<CR><CR>
 map <leader>s :mks! default.vimsession<CR>
 map <leader>l :source default.vimsession<CR>
+
+autocmd FileType c,cpp autocmd BufWritePre <buffer> :let _s=@/|:let _ccol=col('.')|:let _crow=line('.')|:%s/\s\+$//e|:let @/=_s|:nohl|:call cursor(_crow,_ccol)
+
 "------------------------------------------------------------------------------
 " Windows
 "------------------------------------------------------------------------------
