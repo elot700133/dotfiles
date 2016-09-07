@@ -30,6 +30,10 @@ set path+=**
 "set modifiable
 
 set history=1000
+set undolevels=1000
+
+set list
+set listchars=tab:>.,trail:.,extends:#,nbsp:.
 
 "------------------------------------------------------------------------------
 " Color
@@ -93,7 +97,7 @@ map <Leader>ddd :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
 set noswapfile
 
 "------------------------------------------------------------------------------
-" map bindings 
+" map bindings, autocmd
 "------------------------------------------------------------------------------
 set pastetoggle=<F2>  "paste mode
 map <F3> :Dispatch :execute "vimgrep /" . expand("<cword>") . "/ **/*.cpp **/*.hpp **/*.c **/*.h" <Bar> cw 
@@ -106,7 +110,9 @@ map <F12> :Dispatch ctags -R --exclude='build' --exclude='.git' --exclude='.svn'
 map <leader>s :mks! default.vimsession<CR>
 map <leader>l :source default.vimsession<CR>
 
+if has('autocmd')
 autocmd FileType c,cpp autocmd BufWritePre <buffer> :let _s=@/|:let _ccol=col('.')|:let _crow=line('.')|:%s/\s\+$//e|:let @/=_s|:nohl|:call cursor(_crow,_ccol)
+endif
 
 "------------------------------------------------------------------------------
 " Windows
