@@ -130,10 +130,10 @@ set splitright
 " resize windows
 "map + <C-W>+
 "map - <C-W>-
-"map <C-UP> :resize +3<CR>
-"map <C-DOWN> :resize -3<CR>
-"map <C-RIGHT> :vertical resize +3<CR>
-"map <C-LEFT> :vertical resize -3<CR>
+map <UP> :resize +3<CR>
+map <DOWN> :resize -3<CR>
+map <RIGHT> :vertical resize +3<CR>
+map <LEFT> :vertical resize -3<CR>
 
 "map [A :resize +3<CR>
 "map [B :resize -3<CR>
@@ -145,10 +145,10 @@ set splitright
 "map <silent> l :vertical resize +3<CR>
 "map <silent> h :vertical resize -3<CR>
 
-map [A :resize +3<CR>
-map [B :resize -3<CR>
-map [C :vertical resize +3<CR>
-map [D :vertical resize -3<CR>
+"map [A :resize +3<CR>
+"map [B :resize -3<CR>
+"map [C :vertical resize +3<CR>
+"map [D :vertical resize -3<CR>
 if &term =~ '^screen'
     " tmux will send xterm-style keys when its xterm-keys option is on
     execute "set <xUp>=\e[1;*A"
