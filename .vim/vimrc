@@ -28,7 +28,8 @@ Plugin 'vim-scripts/vtreeexplorer.git'
 Plugin 'tpope/vim-dispatch.git'
 "Plugin 'vim-scripts/taglist.vim.git'
 "Plugin 'mileszs/ack.vim.git'
-Plugin 'bling/vim-airline.git'
+Plugin 'vim-airline/vim-airline.git'
+"Plugin 'vim-airline/vim-airline-themes.git'
 "Plugin 'chrisbra/csv.vim.git'
 "Plugin 'vim-scripts/EasyGrep.git'
 "Plugin 'majutsushi/tagbar.git'
@@ -44,6 +45,7 @@ Plugin 'vim-scripts/DoxygenToolkit.vim.git'
 Plugin 'will133/vim-dirdiff.git'
 Plugin 'kana/vim-arpeggio'
 Plugin 'Valloric/YouCompleteMe'
+Plugin 'flazz/vim-colorschemes'
 call vundle#end()
 
 filetype plugin on
@@ -84,7 +86,8 @@ elseif &diff
   syntax off
 else
   "colorscheme darkblue
-  colorscheme elflordmod
+  "colorscheme elflordmod
+  colorscheme Monokai 
   "set background=dark
   "set background=light
 endif
@@ -92,7 +95,7 @@ endif
 " Paint a color vertical line at column
 "highlight OverLength ctermbg=red ctermfg=white guibg=#592929
 "match OverLength /\%81v.\+/
-"set colorcolumn=80
+set colorcolumn=80
 "------------------------------------------------------------------------------
 " Interface
 "------------------------------------------------------------------------------
@@ -330,6 +333,13 @@ endif"
 "------------------------------------------------------------------------------
 let g:DoxygenToolkit_commentType = "C++"
 let g:DoxygenToolkit_authorName = "Too Lee"
+
+"------------------------------------------------------------------------------
+" YouCompleteMe 
+"------------------------------------------------------------------------------
+let g:ycm_min_num_of_chars_for_completion = 1
+let g:ycm_extra_conf_globlist = ['~/mws/*']
+let g:ycm_autoclose_preview_window_after_insertion = 1
 
 "------------------------------------------------------------------------------
 " source custom vimrc to an account

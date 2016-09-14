@@ -27,3 +27,8 @@ for file in $files; do
 done
 echo "...done"
 
+vim +PluginInstall +qall
+
+cd $HOME/dotfiles/.vim/bundle/YouCompleteMe
+./install --clang-completer
+
