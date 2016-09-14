@@ -27,8 +27,10 @@ for file in $files; do
 done
 echo "...done"
 
+git submodule update --init
+
 vim +PluginInstall +qall
 
 cd $HOME/dotfiles/.vim/bundle/YouCompleteMe
-./install --clang-completer
+./install.py --clang-completer
 
