@@ -27,10 +27,18 @@ for file in $files; do
 done
 echo "...done"
 
-git submodule update --init
+#
+# Vim plugin installations
+#
 
+# clone Vundle
+git clone https://github.com/VundleVim/Vundle.vim.git $home_folder/.vim/bundle/Vundle.vim
+
+# installs all other plugin using Vundle
 vim +PluginInstall +qall
 
-cd $HOME/dotfiles/.vim/bundle/YouCompleteMe
+git submodule update --init --recursive
+
+cd $home_folder/dotfiles/.vim/bundle/YouCompleteMe
 ./install.py --clang-completer
 

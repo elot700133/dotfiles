@@ -89,7 +89,7 @@ elseif &diff
 else
   "colorscheme darkblue
   "colorscheme elflordmod
-  colorscheme Monokai
+   colorscheme Monokai
   "set background=dark
   "set background=light
 endif
@@ -260,7 +260,9 @@ let treeExplHidden = 1 " show hidden files
 "------------------------------------------------------------------------------
 " arpeggio
 "------------------------------------------------------------------------------
-call arpeggio#map('i', '', 0, 'jk', '<Esc>')
+if exists(':arpeggio#map')
+  call arpeggio#map('i', '', 0, 'jk', '<Esc>')
+endif
 
 "------------------------------------------------------------------------------
 " DirDiff
