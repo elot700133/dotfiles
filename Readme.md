@@ -3,7 +3,10 @@ To bootstrap your configuration files, run below command.  This will create a bu
 ```bash
 cd dotfiles
 ./setup.bsh <your home dir>
-git submodule update --init
+git clone https://github.com/VundleVim/Vundle.vim.git $home_folder/.vim/bundle/Vundle.vim
+vim +PluginInstall +qall
+cd ~/dotfiles/.vim/bundle/YouCompleteMe
+./install.py --clang-completer
 ```
 
 If you need customization for bash, git, or vim.  You can create the following files in your home, they are read in after the
