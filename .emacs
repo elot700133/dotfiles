@@ -1,4 +1,6 @@
 
+(toggle-debug-on-error)
+
 ;; Make F1 invoke help
 (global-set-key [f1] 'help-command)
 
@@ -8,8 +10,6 @@
 ;; Set up package manager
 (require 'package)
 (package-initialize)
-;;(add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/") t)
-;;(add-to-list 'package-archives '("elpa" . "http://tromey.com/elpa/") t)
 (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/") t)
 
 (require 'cl)
@@ -42,6 +42,10 @@
     (when (not (package-installed-p p))
       (package-install p))))
 
+;;
+;; Color
+;;
+(load-theme 'monokai t)
 
 ;;
 ;; yasnippet
@@ -50,20 +54,16 @@
 (yas-global-mode 1)
 
 ;;
-;; Color
-;;
-(load-theme 'monokai t)
-
-;;
 ;; autopair for paranthesis
 ;;
 (require 'autopair)
 (autopair-global-mode 1)
 
 ;;
-;;(require 'evil)
+;; Evil
 ;;
-;;(evil-mode 1)
+;(require 'evil)
+;(evil-mode 1)
 
 ;;
 ;; autocomplete
@@ -71,54 +71,21 @@
 (require 'auto-complete)
 (require 'auto-complete-config)
 (ac-config-default)
-;(auto-complete-mode 1)
-;(ac-set-trigger-key "TAB")
-;(ac-set-trigger-key "<tab>")
-;; auto-complete-etags
-;(require 'auto-complete-etags)
-;(custom-set-variables
-;  '(ac-etags-requires 1))
-
-;(eval-after-load "etags"
-;  '(progn
-;      (ac-etags-setup)))
-;; auto-complete-clang
-;(require 'auto-complete-clang)
-;(setq mf--source-file-extension "cpp")
-
-;(add-hook 'c-mode-common-hook 'ac-etags-ac-setup)
-;(add-hook 'ruby-mode-common-hook 'ac-etags-ac-setup)
-;;(add-to-list 'ac-sources 'ac-source-etags)
-;;(setq ac-etags-use-document t)
-;;; function to be called when entering c-mode.
-;;(defun my-c-mode-common-hook-func ()
-;;  (interactive)
-;;  "Function to be called when entering into c-mode."
-;;  (when (and (require 'auto-complete nil t) (require 'auto-complete-config nil t))
-;;    (auto-complete-mode t)
-;;    (make-local-variable 'ac-sources)
-;;    (setq ac-auto-start 2)
-;;    (setq ac-sources '(ac-source-words-in-same-mode-buffers
-;;                       ac-source-dictionary))
-;;    (when (require 'auto-complete-etags nil t)
-;;      (add-to-list 'ac-sources 'ac-source-etags)
-;;      (setq ac-etags-use-document t))))
-;;
-;;(add-hook 'c-mode-common-hook 'my-c-mode-common-hook-func)
 
 (require 'org)
 (define-key global-map "\C-cl" 'org-store-link)
 (define-key global-map "\C-ca" 'org-agenda)
 (setq org-log-done t)
 
-;; =============
+;;
 ;; irony-mode
-;; =============
+;;
 (add-hook 'c++-mode-hook 'irony-mode)
 (add-hook 'c-mode-hook 'irony-mode)
-;; =============
+
+;;
 ;; company mode
-;; =============
+;;
 (add-hook 'c++-mode-hook 'company-mode)
 (add-hook 'c-mode-hook 'company-mode)
 ;; replace the `completion-at-point' and `complete-symbol' bindings in
@@ -136,20 +103,23 @@
 ;; trigger completion at interesting places, such as after scope operator
 ;;     std::|
 (add-hook 'irony-mode-hook 'company-irony-setup-begin-commands)
-;; =============
+
+;;
 ;; flycheck-mode
-;; =============
+;;
 (add-hook 'c++-mode-hook 'flycheck-mode)
 (add-hook 'c-mode-hook 'flycheck-mode)
 (eval-after-load 'flycheck
 '(add-hook 'flycheck-mode-hook #'flycheck-irony-setup))
-;; =============
+
+;;
 ;; eldoc-mode
-;; =============
+;;
 (add-hook 'irony-mode-hook 'irony-eldoc)
-;; ==========================================
+
+;;
 ;; (optional) bind TAB for indent-or-complete
-;; ==========================================
+;;
 (defun irony--check-expansion ()
 (save-excursion
   (if (looking-at "\\_>") t
@@ -172,6 +142,7 @@
 (local-set-key (kbd "TAB") 'irony--indent-or-complete)
 (local-set-key [tab] 'irony--indent-or-complete))
 (add-hook 'c-mode-common-hook 'irony-mode-keys)
+
 ;; exit emacs
 ;; C-x C-c
 
