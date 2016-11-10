@@ -65,9 +65,12 @@
 ;;
 ;;(evil-mode 1)
 
-;;----------------------------------------------
+;;
 ;; autocomplete
-;(require 'auto-complete)
+;;
+(require 'auto-complete)
+(require 'auto-complete-config)
+(ac-config-default)
 ;(auto-complete-mode 1)
 ;(ac-set-trigger-key "TAB")
 ;(ac-set-trigger-key "<tab>")
