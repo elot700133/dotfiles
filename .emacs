@@ -1,5 +1,5 @@
 
-(toggle-debug-on-error)
+;;(toggle-debug-on-error)
 
 ;; Make F1 invoke help
 (global-set-key [f1] 'help-command)
@@ -25,22 +25,29 @@
     company-irony
     magit
     monokai-theme
+    helm
+    helm-projectile
+    helm-ls-git
+    projectile
+    ido
+    flx-ido
+    helm-swoop
     )
   "List of packages needs to be installed at launch")
 
-(defun has-package-not-installed ()
-  (loop for p in packages-list
-        when (not (package-installed-p p)) do (return t)
-        finally (return nil)))
-(when (has-package-not-installed)
-  ;; Check for new packages (package versions)
-  (message "%s" "Get latest versions of all packages...")
-  (package-refresh-contents)
-  (message "%s" " done.")
-  ;; Install the missing packages
-  (dolist (p packages-list)
-    (when (not (package-installed-p p))
-      (package-install p))))
+;;(defun has-package-not-installed ()
+;;  (loop for p in packages-list
+;;        when (not (package-installed-p p)) do (return t)
+;;        finally (return nil)))
+;;(when (has-package-not-installed)
+;;  ;; Check for new packages (package versions)
+;;  (message "%s" "Get latest versions of all packages...")
+;;  (package-refresh-contents)
+;;  (message "%s" " done.")
+;;  ;; Install the missing packages
+;;  (dolist (p packages-list)
+;;    (when (not (package-installed-p p))
+;;      (package-install p))))
 
 ;;
 ;; Color
@@ -64,6 +71,8 @@
 ;;
 ;(require 'evil)
 ;(evil-mode 1)
+(setq evil-want-C-u-scroll t)
+(setq evil-want-C-i-jump t)
 
 ;;
 ;; autocomplete
@@ -147,6 +156,7 @@
 ;; Helm
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (require 'helm-config)
+(global-set-key (kbd "C-c g") 'helm-projectile-find-file)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Projectile
@@ -154,8 +164,7 @@
 ;;(require 'projectile-mode)
 ;;(require 'projectile-global-mode)
 ;; Super-f
-(define-key projectile-mode-map [?\s-f] 'projectile-find-file)
-
+(define-key projectile-mode-map [?\s-t] 'projectile-find-other-file)
 ;; exit emacs
 ;; C-x C-c
 
