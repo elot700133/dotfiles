@@ -143,6 +143,19 @@
 (local-set-key [tab] 'irony--indent-or-complete))
 (add-hook 'c-mode-common-hook 'irony-mode-keys)
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Helm
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(require 'helm-config)
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Projectile
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;(require 'projectile-mode)
+;;(require 'projectile-global-mode)
+;; Super-f
+(define-key projectile-mode-map [?\s-f] 'projectile-find-file)
+
 ;; exit emacs
 ;; C-x C-c
 
