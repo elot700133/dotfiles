@@ -50,7 +50,8 @@ elseif &diff
   syntax off
 else
   "colorscheme darkblue
-  colorscheme elflordmod
+  "colorscheme elflordmod
+  colorscheme Monokai 
   "set background=dark
   "set background=light
 endif
