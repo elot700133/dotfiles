@@ -170,6 +170,9 @@ map 7 7gt<CR>
 map 8 8gt<CR>
 map 9 9gt<CR>
 
+" map jk in insert mode as escape
+imap jk <ESC>
+
 " recusively look for tags until reaching home dir
 set tags+=~/.vim/tags/cpp,./tags,~
 
@@ -277,7 +280,7 @@ let g:clang_format_path="/home/tpleeto1/tools/llvm/build/bin/clang-format"
 " arpeggio
 "------------------------------------------------------------------------------
 
-call arpeggio#map('i', '', 0, 'jk', '<Esc>')
+"call arpeggio#map('i', '', 0, 'jk', '<Esc>')
 
 "------------------------------------------------------------------------------
 " DirDiff
