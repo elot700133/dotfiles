@@ -1,2 +1,0 @@
-git submodule foreach git fetch -p
-git submodule foreach git pull

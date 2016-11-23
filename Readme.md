@@ -3,7 +3,6 @@ To bootstrap your configuration files, run below command.  This will create a bu
 ```bash
 cd dotfiles
 ./setup.bsh <your home dir>
-git submodule update --init
 ```
 
 If you need customization for bash, git, or vim.  You can create the following files in your home, they are read in after the
