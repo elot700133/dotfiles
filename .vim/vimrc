@@ -102,7 +102,7 @@ set noswapfile
 "------------------------------------------------------------------------------
 set pastetoggle=<F2>  "paste mode
 "map <F3> :Dispatch :execute "vimgrep /" . expand("<cword>") . "/ **/*.cpp **/*.hpp **/*.c **/*.h" <Bar> cw 
-map <leader>g :Dispatch grep -R --exclude-dir=.git --exclude-dir=build --exclude=tags <cword> . <CR>
+map <leader>g :Dispatch grep -R --exclude-dir=.git --exclude-dir=build --exclude=tags '<cword>' . <CR>
 map <F4> :TagbarToggle<CR>
 "map <F4> :TlistToggle<CR>
 map <F5> :VSTreeExplore<CR>
