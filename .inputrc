@@ -1,5 +1,6 @@
 set editing-mode vi
 
+set bell-style none
 
 "\C-l": clear-screen
 "\C-p": previous-history

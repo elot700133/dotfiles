@@ -15,7 +15,7 @@
   rf = checkout --  # revert a file
   st = status -s
 [push]
-  default = matching
+  default = simple
 [color]
   diff = auto
   status = auto

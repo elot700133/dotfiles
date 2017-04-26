@@ -46,7 +46,8 @@ if has("gui_running")
   " gvim - display tab as [Num]Filename+Modified status
   set guitablabel=\[%N\]\ %t\ %M
 elseif &diff
-  colorscheme elflordmod
+  "colorscheme elflordmod
+  colorscheme Monokai 
   syntax off
 else
   "colorscheme darkblue
@@ -95,6 +96,7 @@ map <Leader>d :exec("tag ".expand("<cword>"))<CR>
 map <Leader>dd :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
 map <Leader>ddd :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
 
+map <Leader>e :e $HOME/.vim/vimrc<CR>
 set noswapfile
 
 "------------------------------------------------------------------------------
@@ -103,12 +105,14 @@ set noswapfile
 set pastetoggle=<F2>  "paste mode
 "map <F3> :Dispatch :execute "vimgrep /" . expand("<cword>") . "/ **/*.cpp **/*.hpp **/*.c **/*.h" <Bar> cw 
 map <leader>g :Dispatch grep -R --exclude-dir=.git --exclude-dir=build --exclude=tags '<cword>' . <CR>
+map <F1> :vert help 
 map <F4> :TagbarToggle<CR>
 "map <F4> :TlistToggle<CR>
 map <F5> :VSTreeExplore<CR>
 "map <F7> :make -s -C
 map <F7> :Dispatch make -s -j`nproc` -C
-map <F12> :Dispatch ctags -R --exclude='build' --exclude='.git' --exclude='.svn' --c++-kinds=+p --fields=+iaS --extra=+q .<CR><CR>
+"map <F12> :Dispatch ctags -R --exclude='build' --exclude='.git' --exclude='.svn' --c++-kinds=+p --fields=+iaS --extra=+q .<CR><CR>
+map <F12> :Dispatch /usr/bin/ctags -R --exclude='.git' --exclude='.svn' --c++-kinds=+p --fields=+iaS --extra=+q .<CR><CR>
 map <leader>s :mks! default.vimsession<CR>
 map <leader>l :source default.vimsession<CR>
 
@@ -130,8 +134,8 @@ set splitbelow
 set splitright
 
 map <leader>b :buffers<CR>
-map <leader>bn :bnext<CR>
-map <leader>bp :bprevious<CR>
+map <leader>n :bnext<CR>
+map <leader>p :bprevious<CR>
 
 " resize windows
 "map + <C-W>+
@@ -207,9 +211,9 @@ endif
 
 " unicode symbols
 let g:airline_left_sep = '»'
-let g:airline_left_sep = '▶'
+let g:airline_left_sep = '|' "'▶'
 let g:airline_right_sep = '«'
-let g:airline_right_sep = '◀'
+let g:airline_right_sep = '|' "'◀'
 let g:airline_symbols.linenr = '␊'
 let g:airline_symbols.linenr = '␤'
 let g:airline_symbols.linenr = '¶'
