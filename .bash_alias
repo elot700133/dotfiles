@@ -43,6 +43,7 @@ alias gitcola='git cola'
 alias gitc='git cola'
 alias ss1='ssh root@10.10.1.1'
 alias ss2='ssh root@10.10.1.2'
+alias tmux='tmux -2'
 
 
 # Functions
