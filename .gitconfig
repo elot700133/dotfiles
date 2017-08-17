@@ -7,20 +7,21 @@
   fo = fetch origin --progress --prune
   lg = log --pretty=oneline -n 20 --graph --abbrev-commit
   list-changed-files = diff-tree --no-commit-id --name-only -r #<sha id>
-  lol = log --graph --date-order -C -M --pretty=format:\"%C(auto)<%h> %Creset%C(auto)%ar %Creset%C(auto)[%an] %C(auto)%d%Creset %s\" --date=relative --color
+  lol = log --graph --date-order -C -M --pretty=format:\"%C(auto)<%h> %Creset%C(auto)%ar %Creset%C(auto)[%an] %C(auto)%d%Creset %s\" --date=relative --color -10
   #log all
   loa = log --graph --date-order -C -M --pretty=format:\"%C(auto)<%h> %Creset%C(auto)%ar %Creset%C(auto)[%an] %C(auto)%d%Creset %s\" --all --date=relative --color
   # shows commit counts
   pulse = shortlog -s --
   rf = checkout --  # revert a file
   st = status -s
+  sdifftool = !git --work-tree "$(git rev-parse --show-toplevel)" --git-dir "$(git rev-parse --git-dir)" difftool
 [push]
   default = simple
 [color]
   diff = auto
   status = auto
- branch = auto
- ui = auto
+  branch = auto
+  ui = auto
 [merge]
   tool = vimdiff
 [mergetool]
@@ -33,5 +34,11 @@
 [core]
   autocrlf = input
   excludesfile = ~/.gitignore
+[filter "lfs"]
+  clean = git-lfs clean -- %f
+  smudge = git-lfs smudge --skip %f
+  process = git-lfs filter-process --skip
+  required = true
 [include]
-	path=~/.gitconfig_custom
+  path=~/.gitconfig_custom
+
