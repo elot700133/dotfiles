@@ -53,6 +53,7 @@ else
   "colorscheme darkblue
   "colorscheme elflordmod
   colorscheme Monokai 
+  colorscheme molokai 
   "set background=dark
   "set background=light
 endif
@@ -92,7 +93,8 @@ set novisualbell
 " ctrl + \ to tab window definition
 "map <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR> 
 " alt + \ to vertical split definition
-map <Leader>d :exec("tag ".expand("<cword>"))<CR>
+"map <Leader>d :exec("tag ".expand("<cword>"))<CR>
+map <Leader>d :exec("tselect /".expand("<cword>"))<CR>
 map <Leader>dd :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
 map <Leader>ddd :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
 
@@ -109,17 +111,23 @@ map <F1> :vert help
 map <F4> :TagbarToggle<CR>
 "map <F4> :TlistToggle<CR>
 map <F5> :VSTreeExplore<CR>
+nmap <Leader>6 :set nu! <Bar> set rnu! <Bar> set foldenable!<CR>
 "map <F7> :make -s -C
-map <F7> :Dispatch make -s -j`nproc` -C
+inoremap <F7> <ESC>:w<enter>:Dispatch make -s -j`nproc` debug<CR>
+noremap <F7> :wa<enter>:Dispatch make -s -j`nproc` debug<CR>
 "map <F12> :Dispatch ctags -R --exclude='build' --exclude='.git' --exclude='.svn' --c++-kinds=+p --fields=+iaS --extra=+q .<CR><CR>
-map <F12> :Dispatch /usr/bin/ctags -R --exclude='.git' --exclude='.svn' --c++-kinds=+p --fields=+iaS --extra=+q .<CR><CR>
+map <F12> :Dispatch /usr/bin/ctags -R --exclude='./build' --exclude='.git' --exclude='.svn' --c++-kinds=+p --fields=+iaS --extra=+q
 map <leader>s :mks! default.vimsession<CR>
 map <leader>l :source default.vimsession<CR>
+"Remove white space or tabs
+nnoremap <leader>w :%s/\s\+$//e<CR>
 
 if has('autocmd')
 autocmd FileType c,cpp autocmd BufWritePre <buffer> :let _s=@/|:let _ccol=col('.')|:let _crow=line('.')|:%s/\s\+$//e|:let @/=_s|:nohl|:call cursor(_crow,_ccol)
+autocmd FileType qf setlocal wrap
 endif
 
+set backspace=indent,eol,start
 "------------------------------------------------------------------------------
 " Windows
 "------------------------------------------------------------------------------
@@ -192,12 +200,12 @@ set smarttab
 set shiftwidth=2 " tab = 2 spaces
 set autoindent "Auto indent
 set smartindent "Smart indent
-"set wrap "Wrap lines
-set nowrap "no wrapping text
+set wrap "Wrap lines
+"set nowrap "no wrapping text
 
-set foldmethod=syntax
-set foldcolumn=2
-set foldlevel=20
+"set foldmethod=syntax
+"set foldcolumn=2
+"set foldlevel=20
 
 "------------------------------------------------------------------------------
 " Airline
@@ -251,7 +259,7 @@ let g:ctrlp_show_hidden = 1
 let g:ctrlp_working_path_mode = '0'
 
 "follow symlinks
-let g:ctrlp_follow_symlinks = 1
+let g:ctrlp_follow_symlinks = 2
 
 "ignore following symlinks
 let g:ctrlp_custom_ignore = {
@@ -261,8 +269,10 @@ let g:ctrlp_custom_ignore = {
 
 ""------------------------------------------------------------------------------
 "" OmniCppComplete
+"" Problems: code completion isn't robust, when a var is declared without full
+"" namespace, tag look up will not successfully find it.
 ""------------------------------------------------------------------------------
-"let OmniCpp_NamespaceSearch = 0
+"let OmniCpp_NamespaceSearch = 0    " if set to 1 will cause major slow down
 "let OmniCpp_GlobalScopeSearch = 1
 "let OmniCpp_ShowAccess = 1
 "let OmniCpp_ShowPrototypeInAbbr = 1 " show function parameters
@@ -272,8 +282,10 @@ let g:ctrlp_custom_ignore = {
 "let OmniCpp_DefaultNamespaces = ["std", "_GLIBCXX_STD"]
 "" automatically open and close the popup menu / preview window
 "au CursorMovedI,InsertLeave * if pumvisible() == 0|silent! pclose|endif
-"set completeopt=menuone
-set omnifunc=syntaxcomplete#Complete
+""set omnifunc=syntaxcomplete#Complete
+""au BufNewFile,BufRead,BufEnter *.cpp,*.hpp set omnifunc=omni#cpp#complete#Main
+""set omnifunc=syntaxcomplete#Complete
+"set completeopt=menuone,menu,longest ",preview
 ""------------------------------------------------------------------------------
 "" easymotion
 ""------------------------------------------------------------------------------
@@ -345,6 +357,21 @@ endif"
 "------------------------------------------------------------------------------
 let g:DoxygenToolkit_commentType = "C++"
 let g:DoxygenToolkit_authorName = "Too Lee"
+
+"------------------------------------------------------------------------------
+" YouCompleteMe
+"------------------------------------------------------------------------------
+let g:ycm_max_num_candidates=10
+let g:ycm_max_num_identifier_candidates=5
+let g:ycm_auto_trigger=1 " use <C-space> to manually trigger
+
+"------------------------------------------------------------------------------
+" Golden ratio
+"------------------------------------------------------------------------------
+let g:loaded_golden_ratio=1
+
+"let g:golden_ratio_wrap_ignored=1
+"let g:golden_ratio_exclude_nonmodifiable=1
 
 "------------------------------------------------------------------------------
 " source custom vimrc to an account
