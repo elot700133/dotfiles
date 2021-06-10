@@ -15,6 +15,7 @@
   rf = checkout --  # revert a file
   st = status -s
   sdifftool = !git --work-tree "$(git rev-parse --show-toplevel)" --git-dir "$(git rev-parse --git-dir)" difftool
+  findbin = diff <(git grep -Ic '') <(git grep -c '') | grep '^>' | cut -d : -f 1 | cut -d ' ' -f 2-
 [push]
   default = simple
 [color]
